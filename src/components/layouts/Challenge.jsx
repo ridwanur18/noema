@@ -1,8 +1,24 @@
+import { isEncountered, shuffle } from "../../utils";
 import ProgressBar from "../ProgressBar";
+import { useState } from 'react';
+import DEFINITIONS from '../../utils/VOCAB.json';
 
-export default function Challenge() {
-    const word = "copacetic";
-    const definition = "in excellent order";
+export default function Challenge(props) {
+    const { day, daysWords, handleChangePage, handleIncrementAttempts, handleCompleteDay, PLAN } = props;
+
+    const [wordIndex, setWordIndex] = useState(0);
+    const [inputVal, setInputVal] = useState('');
+    const [showDefinition, setShowDefinition] = useState(false);
+    const [listToLearn, setListToLearn] = useState([
+        ...daysWords,
+        ...shuffle(daysWords),
+        ...shuffle(daysWords),
+        ...shuffle(daysWords)
+    ]);
+
+    const word = listToLearn[wordIndex];
+    const isNewWord = showDefinition || (!isEncountered(day, word) && wordIndex < daysWords.length);
+    const definition = DEFINITIONS[word]; 
 
     return (
         <section id="challenge">

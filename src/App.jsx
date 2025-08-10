@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react'
-import Layout from './components/layouts/Layout.jsx'
-import Welcome from './components/layouts/Welcome.jsx'
-import Dashboard from './components/layouts/Dashboard.jsx'
-import Challenge from './components/layouts/Challenge.jsx'
+import { useState, useEffect } from 'react';
+import Layout from './components/layouts/Layout.jsx';
+import Welcome from './components/layouts/Welcome.jsx';
+import Dashboard from './components/layouts/Dashboard.jsx';
+import Challenge from './components/layouts/Challenge.jsx';
 
-import WORDS from './utils/VOCAB.json'
-import { getWordByIndex, PLAN } from './utils'
+import WORDS from './utils/VOCAB.json';
+import { getWordByIndex, PLAN } from './utils';
 
 
 function App() {
@@ -32,27 +32,18 @@ function App() {
 		handleChangePage(1);
 	}
 
-	useEffect(() => {
-		if (!localStorage)	{
-			return;
-		}
-		if (localStorage.getItem('username'))	{
-			setName(localStorage.getItem('username'));
-			setPageSelector(1);
-		}
-	}, []);
+	function handleCompleteDay()	{
+		const newDay = day + 1;
+		const newDatetime = Date.now();
+		setDay(newDay);
+		setDatetime(newDatetime);
 
-	const pages = {
-		0: <Welcome handleCreateAccount={handleCreateAccount} name={name} setName={setName} />,
-		1: <Dashboard name={name} attempts={attempts} PLAN={PLAN} day={day} handleChangePage={handleChangePage} daysWords={daysWords} datetime={datetime} />,
-		2: <Challenge />
-	};
+		localStorage.setItem('day', JSON.stringify({
+			day: newDay, 
+			datetime: newDatetime
+		}));
 
-	return (
-		<Layout>
-			{pages[pageSelector]}
-		</Layout>
-	)
-}
+		setPageSelector(1);
+	}
 
-export default App
+	function handleI
