@@ -24,18 +24,25 @@ export default function Challenge(props) {
         <section id="challenge">
  
             <h1>{word}</h1>
-            <p>{definition}</p>
+            {isNewWord && (<p>{definition}</p>)}
 
             <div className="helper">
                 <div>
                     {[...Array(definition.length).keys()].map((item, index) => {
+                        const style = (inputVal.length < item + 1) ? 
+                            '' : 
+                            ( (inputVal.split('')[index].toLowerCase() == definition.split('')[index].toLowerCase()) ? 
+                                'correct' : 'incorrect' )
+
                         return (
-                            <div key={index}></div>
+                            <div key={index} className={" " + style} ></div>
                         )
                     })}
                 </div>
 
-                <input type="text" placeholder="enter the definition" />
+                <input value={inputVal} onChange={(e) => {
+                    setInputVal(e.target.value)
+                }} type="text" placeholder="enter the definition" />
             </div>
 
             <div className="challenge-btns">
