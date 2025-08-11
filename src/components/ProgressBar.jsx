@@ -15,4 +15,6 @@ export default function ProgressBar(props) {
             {levelBars}
 
             <div className="xp" style={{ width: `${remainderXP}%` }}></div>
-        </div
+        </div>
+    )
+}

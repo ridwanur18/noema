@@ -186,4 +186,4 @@ export function generateDynamicSpacedRepetitionSchedule(totalWords, maxNewPerDay
     return schedule
 }
 
-export const PLAN = generateDynamicSpacedRepetitionSchedule(Objec
+export const PLAN = generateDynamicSpacedRepetitionSchedule(Object.keys(WORDS).length)

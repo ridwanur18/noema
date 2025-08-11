@@ -32,4 +32,17 @@ export default function Stats(props) {
                     <h4>
                         {calculateNewWords(day - 1)}
                     </h4>
-           
+                </div>
+                <div>
+                    <p>accuracy %</p>
+                    <h4>
+                        {(calculateAccuracy(attempts, day) * 100).toFixed(1)}
+                    </h4>
+                </div>
+            </div>
+ 
+            <ProgressBar text={`lvl ${flooredLvl}`} remainderXP={remainderXP} />
+
+        </div>
+    )
+}

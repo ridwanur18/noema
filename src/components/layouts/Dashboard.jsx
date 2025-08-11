@@ -9,4 +9,6 @@ export default function Dashboard(props) {
             <Stats {...props} />
             <Countdown {...props} />
             <History {...props} />
-    
+        </section>
+    )
+}
