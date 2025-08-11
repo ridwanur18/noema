@@ -11,7 +11,7 @@ export default function History(props) {
             ) : (
                 <div className="history-list">
                     {historyKeys.map((item, index) => {
-                        const dateKey = (new Date(item)).toString.split(' ').slice(1, 4).join(' ')
+                        const dateKey = (new Date(item)).toString().split(' ').slice(1, 4).join(' ')
                         return (
                             <div key={index} className="card-button-secondary">
                                 <div>

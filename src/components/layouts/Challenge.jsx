@@ -47,6 +47,8 @@ export default function Challenge(props) {
 
                 <input value={inputVal} onChange={(e) => {
                     if (e.target.value.length == definition.length && e.target.value.length > inputVal.length) {
+                        handleIncrementAttempts()
+                        
                         if (e.target.value.toLowerCase() == definition.toLowerCase())   {
                             if (wordIndex >= listToLearn.length - 1)    {
                                 handleCompleteDay()
