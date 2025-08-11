@@ -1,14 +1,14 @@
 export default function History(props) {
-    const { history } = props;
+    const { history, day } = props;
     const historyKeys = Object.keys(history);
 
     return (
         <div className="card history-card">
 
             <h4>history</h4>
-            {historyKeys.length === 0 ? (
+            {historyKeys.length === 0 && day === 1 ? (
                 <p>you have no attempts! press <b>start</b> to begin</p>
-            ) : (
+            ) : (historyKeys.length === 0 && day > 1) ? (<p>your attempt is ongoing. best of luck!</p>) : (
                 <div className="history-list">
                     {historyKeys.map((item, index) => {
                         const dateKey = (new Date(item)).toString().split(' ').slice(1, 4).join(' ')

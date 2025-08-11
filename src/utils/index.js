@@ -44,7 +44,7 @@ export function calculateNewWords(day) {
 
 export function calculateAccuracy(attempts, day) {
     let totalWords = generateWordArr(day, -1)
-    console.log(attempts, totalWords)
+    console.log("totalWords: ", attempts, totalWords)
     return (totalWords.length * 4) / attempts
 }
 
