@@ -36,7 +36,7 @@ export default function Stats(props) {
                 <div>
                     <p>accuracy %</p>
                     <h4>
-                        {(calculateAccuracy(attempts+1, day) * 100).toFixed(1)}
+                        {(calculateAccuracy(attempts, day) * 100).toFixed(1)}
                     </h4>
                 </div>
             </div>
