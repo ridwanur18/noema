@@ -1,12 +1,30 @@
-# React + Vite
+# Noema
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+*A fun, game-based vocabulary learning app.*
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📖 Overview
+Noema is a web application designed to make vocabulary learning engaging and consistent.  
+Each day, you’re introduced to **3 new words** and asked to **review 3 words from previous days**, reinforcing retention through interactive game mechanics.  
+The goal is to turn word learning into a daily habit without it feeling like a chore.
 
-## Expanding the ESLint configuration
+**Live Demo:** [https://noema-hazel.vercel.app/](https://noema-hazel.vercel.app/)  
+Deployed with [Vercel](https://vercel.com/).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Features
+- **Daily Learning** — Get 3 carefully selected new words each day.
+- **Spaced Review** — Review 3 previous words to strengthen memory.
+- **Instant Feedback** — See correct/incorrect results in real-time.
+- **Progress Tracking** — Keep track of your learning streaks.
+- **Responsive UI** — Works smoothly on desktop and mobile devices.
+
+---
+
+## 🛠 Tech Stack
+- **Frontend:** React
+- **State Management:** React Hooks
+- **Styling:** FantaCSS
+- **Version Control:** Git & GitHub
